@@ -1,0 +1,13 @@
+README
+
+2015/12/28
+Waheed Brown
+
+OpenGL Ubuntu Linux Tutorial
+http://www.codeproject.com/Articles/182109/Setting-up-an-OpenGL-development-environment-in-Ub
+
+NOTES:
+- This program draws a white square in an FreeGLUT window
+- The proper OpenGL compile line for Ubuntu 14.04 is:
+
+	g++ <program_name>.cpp -lGL -lGLU -lglut -o <program_name>
