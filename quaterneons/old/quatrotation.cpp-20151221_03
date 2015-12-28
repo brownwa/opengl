@@ -1,0 +1,38 @@
+/*
+ * quatrotation.cpp
+ *
+ * 2015/12/21
+ * Waheed Brown
+ *
+ * OpenGL Tutorial
+ * http://www.cprogramming.com/tutorial/3d/quaternions.html
+ */
+
+#include <iostream>
+#include "quaterneon.h"
+using namespace std;
+
+int main () {
+
+  double point[] = {10, 0, 0, 0}; // RH coord system
+  double phi = Point::degToRad(0); // Angles in radians
+  double theta = Point::degToRad(0);
+  double psi = Point::degToRad(90);
+  
+  Quaterneon q1(90, 0, 0, 1); // 90 deg rot around z-axis
+  Quaterneon q2(90, 1, 0, 0); // 90 deg rot around y-axis
+  Quaterneon q3 = q1 * q2;
+  //  q3.normalize(); // TESTING LINE
+
+  cout << endl;
+  q1.show();
+  cout << endl;
+  q2.show();
+  cout << endl;
+  q3.show();
+  cout << endl;
+
+  // Generate rotated point
+
+  return 0;
+}

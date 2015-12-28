@@ -1,0 +1,8 @@
+- build quaternion class
+- build normalization method
+- overload * for quaternion multiplication
+- Make Matrix class
+- generate local rotation quaternion
+- generate rotation matrix
+
+NOTES: Use Boost library for matrix and graph classes

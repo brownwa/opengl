@@ -1,0 +1,87 @@
+/*
+ * matrotation.cpp
+ *
+ * 2015/12/16
+ * Waheed Brown
+ *
+ * OpenGL Tutorial
+ * http://www.cprogramming.com/tutorial/3d/rotationMatrices.html
+ */
+
+#include <iostream>
+#include <math.h>
+#include <string>
+using namespace std;
+
+// Pass by reference
+void dotProduct(double result[][4], double A[][4], double B[][4]) {
+  for(size_t i = 0; i < 4; ++i) {
+    for(size_t j = 0; j < 4; ++j) {
+      result[i][j] = A[i][j] * B[j][i];
+    }
+  }
+}
+
+void showMatrix(double matrix[][4]) {
+  cout << "{ ";
+
+  for(size_t i = 0; i < 4; ++i ) {
+    cout << '{';
+
+    for(size_t j = 0; j < 4; ++j) {
+      cout << matrix[i][j];
+      if( j >= 3) {
+	break;
+      } else {
+	cout << ",\t";
+      }
+    }
+
+    if(i >= 3) {
+      break;
+    } else {
+      cout << "}," << endl;
+    }
+  }
+
+  cout << " }" << endl;
+}
+
+int main () {
+
+  double point[] = {1, 1, 1, 0}; // RH coord system
+  double phi = 90; // Angles in degrees
+  double theta = 90;
+  double psi = 90;
+  
+  double matRotationX[4][4] = { {1, 0, 0, 0},
+				{0, cos(phi), -sin(phi), 0},
+				{0, sin(phi), cos(phi), 0},
+				{0, 0, 0, 1} };
+
+  double matRotationY[4][4] = { {cos(phi), 0, sin(phi), 0},
+				{0, 1, 0, 0},
+				{-sin(phi), 0, cos(phi), 0},
+				{0, 0, 0, 1} };
+
+  double matRotationZ[4][4] = { {cos(phi), sin(phi), 0, 0},
+				{-sin(phi), cos(phi), 0, 0},
+				{0, 0, 1, 0},
+				{0, 0, 0, 1} };
+
+  double matRotationTotal[4][4];
+  dotProduct(matRotationTotal, matRotationX, matRotationY);
+  dotProduct(matRotationTotal, matRotationTotal, matRotationZ);
+
+  cout << endl;
+  showMatrix(matRotationX);
+  cout << endl;
+  showMatrix(matRotationY);
+  cout << endl;
+  showMatrix(matRotationZ);
+  cout << endl;
+  showMatrix(matRotationTotal);
+  cout << endl;
+
+  return 0;
+}

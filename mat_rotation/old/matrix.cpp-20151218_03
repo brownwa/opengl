@@ -1,0 +1,73 @@
+/*
+ * matrix.cpp
+ *
+ * 2015/12/18
+ * Waheed Brown
+ *
+ * OpenGL Tutorial
+ * http://www.cprogramming.com/tutorial/3d/rotationMatrices.html
+ */
+
+#include <iostream>
+#include "matrix.h"
+using namespace std;
+
+// Pass by reference
+void Point::dotProduct(double* result, double* p, double m[][4]) {
+  for(size_t i = 0; i < 4; ++i) {
+    result[i] = ( p[0] * m[0][i] ) +
+      ( p[1] * m[1][i] ) +
+      ( p[2] * m[2][i] ) +
+      ( p[3] * m[3][i] );
+  }
+}
+
+void Point::showPoint(double* p) {
+  cout << '{';
+
+  for(size_t i = 0; i < 4; ++i) {
+    cout << p[i];
+    if(i >= 3) {
+      break;
+    } else {
+      cout << ",\t";
+    }
+  }
+
+  cout << '}' << endl;
+}
+
+// Pass by reference
+void Matrix::dotProduct(double result[][4], double A[][4], double B[][4]) {
+  for(size_t i = 0; i < 4; ++i) {
+    for(size_t j = 0; j < 4; ++j) {
+       result[i][j] = A[i][j] * B[j][i];
+    }
+  }
+}
+
+void Matrix::showMatrix(double matrix[][4]) {
+  cout << "{ ";
+
+  for(size_t i = 0; i < 4; ++i ) {
+    cout << '{';
+
+    for(size_t j = 0; j < 4; ++j) {
+      cout << matrix[i][j];
+      if( j >= 3) {
+	break;
+      } else {
+	cout << ",\t";
+      }
+    }
+
+    cout << '}';
+    if(i >= 3) {
+      break;
+    } else {
+      cout << ',' << endl;
+    }
+  }
+
+  cout << " }" << endl;
+}
