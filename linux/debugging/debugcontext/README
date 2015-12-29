@@ -1,0 +1,17 @@
+README
+
+2015/12/28
+Waheed Brown
+
+OpenGL Developers Toolbox
+Debugging and Profiling OpenGL
+Creating a Debug Context
+
+
+REFERENCES:
+Shreiner D., et al, OpenGL Programming Guide, Eighth Edition, (c)2013 Pearson Education, Inc 
+
+
+NOTES:
+- Uses GLX (OpenGL extension for X Window), Ubuntu environment
+
