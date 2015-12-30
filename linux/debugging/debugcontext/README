@@ -13,5 +13,23 @@ Shreiner D., et al, OpenGL Programming Guide, Eighth Edition, (c)2013 Pearson Ed
 
 
 NOTES:
-- Uses GLX (OpenGL extension for X Window), Ubuntu environment
+- Code requires OpenGL 3.2 or later. To check your version:
+
+	$ glxinfo | grep OpenGL
+
+- Also check that your graphics hardware is supported. To save
+  you some frustration, VM graphics emulators tend to be a few
+  versions behind regarding OpenGL. As of December 2015, VM Ware
+  Fusion 7.x only supports up to OpenGL 2.1 for Ubuntu Linux.
+
+	$ lspci | grep "VGA"
+
+- Code uses GLX (OpenGL extension for X Window), Ubuntu environment:
+
+	#include "GL/glx.h"
+
+- Compile line is unchanged from other OpenGL projects. Just include
+  the -g option to enable compiler's debug mode:
+
+	g++ -g debugcontext.cpp debug.cpp -lGL -lGLU -lglut -o debugcontext
 
