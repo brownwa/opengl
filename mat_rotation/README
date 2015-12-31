@@ -6,9 +6,16 @@ Waheed Brown
 OpenGL Tutorial
 http://www.cprogramming.com/tutorial/3d/rotationMatrices.html
 
+SUMMARY:
+
+This folder includes tools for 3D matrix rotation in C. For
+3D matrix rotation in C++ use the Boost C++ libraries:
+
+	http://www.boost.org/
+
 NOTES:
-This implementation suffers from gimble lock
-Matricies are defined as MxN, row by column
-All trig calculations require angles in radians
-All points are ROW vectors, which must be of exactly 1x4 dimension
-All matricies are of exactly 4x4 dimension
+- This implementation suffers from gimble lock
+- Matricies are defined as MxN, row by column
+- All trig calculations require angles in radians
+- All points are ROW vectors, which must be of exactly 1x4 dimension
+- All matricies are of exactly 4x4 dimension

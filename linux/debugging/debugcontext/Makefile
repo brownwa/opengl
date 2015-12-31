@@ -16,9 +16,9 @@
 # - Uses GLX (OpenGL extension for X Window), Ubuntu environment
 
 linux:
-	g++ debugcontext.cpp -lGL -lGLU -lglut -o debugcontext
+	gcc debugcontext.c debug.c -lGL -lGLU -lglut -o debugcontext
 debug:
-	g++ -g debugcontext.cpp -lGL -lGLU -lglut -o debugcontext
+	gcc -g debugcontext.c debug.c -lGL -lGLU -lglut -o debugcontext
 clean:
 	rm -rf *~
 	rm -rf *#

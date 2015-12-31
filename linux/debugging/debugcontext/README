@@ -7,10 +7,8 @@ OpenGL Developers Toolbox
 Debugging and Profiling OpenGL
 Creating a Debug Context
 
-
 REFERENCES:
 Shreiner D., et al, OpenGL Programming Guide, Eighth Edition, (c)2013 Pearson Education, Inc 
-
 
 NOTES:
 - Code requires OpenGL 3.2 or later. To check your version:
@@ -31,5 +29,5 @@ NOTES:
 - Compile line is unchanged from other OpenGL projects. Just include
   the -g option to enable compiler's debug mode:
 
-	g++ -g debugcontext.cpp debug.cpp -lGL -lGLU -lglut -o debugcontext
+	gcc -g debugcontext.cpp debug.cpp -lGL -lGLU -lglut -o debugcontext
 

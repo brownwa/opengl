@@ -7,9 +7,9 @@
 # http://www.cprogramming.com/tutorial/3d/quaternions.html
 
 all:
-	g++ quatrotation.cpp quaternion.cpp -o quatrotation
+	gcc quatrotation.c quaternion.c -lm -o quatrotation
 debug:
-	g++ -g quatrotation.cpp quaternion.cpp -o quatrotation
+	gcc -g quatrotation.c quaternion.c -lm -o quatrotation
 clean:
 	rm -rf *o
 	rm -rf *#

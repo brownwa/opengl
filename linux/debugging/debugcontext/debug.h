@@ -18,28 +18,26 @@
 #include "GL/gl.h"
 #include "GL/glx.h"
 
-class Debug
-{
- private:
-  Display* _dpy;
-  GLXFBConfig _config;
-  GLXContext _share_context;
-  int _major;
-  int _minor;
+// Creating a Debug Context Using GLX
+GLXContext CreateDebugContext(Display* dpy,
+			      GLXFBConfig config,
+			      GLXContext share_context,
+			      int major, int minor);
 
- public:
-  Debug() {}
-  Debug(Display* newDpy,
-	GLXFBConfig newConfig,
-	GLXContext new_share_context,
-	int newMajor, int newMinor) :
-      _dpy(newDpy),
-      _config(newConfig),
-      _share_context(new_share_context),
-      _major(newMajor),
-      _minor(newMinor) {}
-  GLXContext CreateDebugContext(Display* dpy,
-				       GLXFBConfig config,
-				       GLXContext share_context,
-				       int major, int minor);
-};
+// Prototype for the Debug Message Callback Function
+typedef void (APIENTRY *DEBUGPROC)(GLenum source,
+				   GLenum type,
+				   GLuint id,
+				   GLenum severity,
+				   GLsizei length,
+				   const GLchar* message,
+				   void* userParam);
+
+void APIENTRY DebugCallbackFunction(GLenum source,
+				    GLenum type,
+				    GLuint id,
+				    GLenum severity,
+				    GLsizei length,
+				    const GLchar* message,
+				    void* userParam);
+

@@ -14,9 +14,9 @@
 # All matricies are of exactly 4x4 dimension
 
 all:
-	g++ matrotation.cpp matrix.cpp -o matrotation
+	gcc matrotation.c matrix.c -lm -o matrotation
 debug:
-	g++ -g matrotation.cpp matrix.cpp -o matrotation
+	gcc -g matrotation.c matrix.c -lm -o matrotation
 clean:
 	rm -rf *o
 	rm -rf *#

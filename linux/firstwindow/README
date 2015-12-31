@@ -8,6 +8,11 @@ http://www.codeproject.com/Articles/182109/Setting-up-an-OpenGL-development-envi
 
 NOTES:
 - This program draws a white square in an FreeGLUT window
+- Install the OpenGL and FreeGLUT libraries:
+
+	sudo apt-get install mesa-common-dev
+	sudo apt-get install freeglut3-dev
+
 - The proper OpenGL compile line for Ubuntu 14.04 is:
 
-	g++ <program_name>.cpp -lGL -lGLU -lglut -o <program_name>
+	gcc <program_name>.cpp -lGL -lGLU -lglut -o <program_name>
