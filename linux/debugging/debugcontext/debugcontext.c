@@ -1,6 +1,6 @@
 /*
- * debugcontext.cpp
- * 2015/12/28
+ * debugcontext.c
+ * 2015/12/30
  * Waheed Brown
  *
  * OpenGL Developers Toolbox
@@ -14,8 +14,11 @@
  * - Uses GLX (OpenGL extension for X Window), Ubuntu environment
  */
 
-#include "GL/freeglut.h"
-#include "GL/gl.h"
+#include "debug.h"
+// Included in debug.h
+// #include "GL/freeglut.h"
+// #include "GL/gl.h"
+// #include "GL/glx.h"
 
 void renderFunction()
 {
