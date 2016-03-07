@@ -1,0 +1,70 @@
+Sunday March 6, 2016
+README
+Waheed Brown
+
+OpenGL Redbook - Chapter 1 - Example 1.1
+
+Table of Contents:
+
+- Instructions
+- Environment
+- Required Packages
+- Compile Line
+- References
+
+Instructions:
+
+vgl.h and LoadShaders.h are part of the redbook source code:
+http://stackoverflow.com/questions/17365699/vgl-h-missing-opengl
+
+Environment:
+
+Dell Inspiron 15 7559, Nvidia GeForce GTX 960M, Ubuntu 15.10
+
+Required packages for Ubuntu 15.10:
+
+Install order matters, specifically install the video card
+package last. Note that you want to update your OS to the
+latest version first. Also, if your OS is 32bit then append
+":386i" to the end of all the package names. If a 32bit version
+doesn't exist then apt-get will let you know. However most
+people are running 64bit Linux if they're working with OpenGL 4.x.
+
+One note on the video card drivers, the apt repositories may
+not give you the latest driver, which was the case for me with
+the "nvidia-current" package. I had to find the name of the
+most recent Nvidia package by opening the Ubuntu Software &
+Updates utility, under the Additional Drivers tab.
+
+sudo apt-get install linux-headers-generic build-essential
+sudo apt-get install mesa-utils
+sudo apt-get install libxmu-dev libxmu-headers
+sudo apt-get install freeglut3-dev
+sudo apt-get install libglew1.10
+sudo apt-get install libglew-dev
+
+# Bad!
+#sudo apt-get install nvidia-current
+# Good :)
+sudo apt-get install nvidia-352-updates
+
+Compile Line:
+
+The -lGLEW library supercedes the -lGLU one, just make sure to
+include the following two lines in your code:
+
+#define GLEW_STATIC
+#include <GL/glew.h>
+
+From the command line:
+
+g++ triangles.cpp LoadShaders.cpp -lGLEW -lGL -lglut -o triangles
+
+More information and the debug compile line can be found in the
+Makefile.
+
+References:
+
+Shreiner, D., et. al., "OpenGL Programming Guide, 8th Ed.",
+(c) 2013 Pearson Education, Inc.
+
