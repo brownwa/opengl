@@ -27,7 +27,7 @@ NOTES:
 	#include "GL/glx.h"
 
 - Compile line is unchanged from other OpenGL projects. Just include
-  the -g option to enable compiler's debug mode:
+  the -g -O0 -Wall option to enable compiler's debug mode:
 
-	gcc -g debugcontext.cpp debug.cpp -lGL -lGLU -lglut -o debugcontext
+	gcc -g -O0 -Wall debugcontext.cpp debug.cpp -lGL -lGLU -lglut -o debugcontext
 

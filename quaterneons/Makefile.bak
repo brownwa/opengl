@@ -9,7 +9,7 @@
 all:
 	gcc quatrotation.c quaternion.c -lm -o quatrotation
 debug:
-	gcc -g -O0 -Wall quatrotation.c quaternion.c -lm -o quatrotation
+	gcc -g quatrotation.c quaternion.c -lm -o quatrotation
 clean:
 	rm -rf *o
 	rm -rf *#

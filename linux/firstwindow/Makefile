@@ -7,7 +7,7 @@
 # http://www.codeproject.com/Articles/182109/Setting-up-an-OpenGL-development-environment-in-Ub
 
 linux:
-	gcc firstwindow.cpp -lGL -lGLU -lglut -o firstwindow
+	gcc firstwindow.c -lGL -lGLU -lglut -o firstwindow
 
 clean:
 	rm -rf *~

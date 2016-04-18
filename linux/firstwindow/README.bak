@@ -10,8 +10,8 @@ NOTES:
 - This program draws a white square in an FreeGLUT window
 - Install the OpenGL and FreeGLUT libraries:
 
-	sudo apt-g -O0 -Wallet install mesa-common-dev
-	sudo apt-g -O0 -Wallet install freeglut3-dev
+	sudo apt-get install mesa-common-dev
+	sudo apt-get install freeglut3-dev
 
 - The proper OpenGL compile line for Ubuntu 14.04 is:
 

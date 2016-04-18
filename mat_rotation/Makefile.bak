@@ -16,7 +16,7 @@
 all:
 	gcc matrotation.c matrix.c -lm -o matrotation
 debug:
-	gcc -g -O0 -Wall matrotation.c matrix.c -lm -o matrotation
+	gcc -g matrotation.c matrix.c -lm -o matrotation
 clean:
 	rm -rf *o
 	rm -rf *#

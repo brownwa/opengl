@@ -51,12 +51,9 @@ void init(void)
   glBufferData( GL_ARRAY_BUFFER, sizeof(verticies),
 		verticies, GL_STATIC_DRAW);
 
-  // Make sure these shader files exist or it will cause
-  // issue with glutInitContextVersion()
-  //
   ShaderInfo shaders[] = {
-    { GL_VERTEX_SHADER, "triangles.vert" },
-    { GL_FRAGMENT_SHADER, "triangles.frag" },
+    { GL_VERTEX_SHADER, "triangles,vert" },
+    { GL_FRAGMENT_SHADER, "triangles,frag" },
     { GL_NONE, NULL }
   };
 
@@ -66,9 +63,6 @@ void init(void)
   glVertexAttribPointer( vPosition, 2, GL_FLOAT,
 			 GL_FALSE, 0, BUFFER_OFFSET(0) );
   glEnableVertexAttribArray(vPosition);
-  //  glClearColor(0.0, 1.0, 0.0, 1.0); // Set BG color in init
-                                        // const for duration of
-                                        // program
 }
 
 //-----------------------------------------------------
@@ -96,8 +90,9 @@ int main(int argc, char** argv)
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGBA);
   glutInitWindowSize(512, 512);
-  glutInitContextVersion(3, 3); // Make sure shaders defined
-                                // or will cause issues
+  //  glutInitContextVersion(4, 3);
+  //    This function no longer exists in the freeglut API:
+  //    http://freeglut.sourceforge.net/docs/api.php
   glutInitContextProfile(GLUT_CORE_PROFILE);
   glutCreateWindow( argv[0] );
 

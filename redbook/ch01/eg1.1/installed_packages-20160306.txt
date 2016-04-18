@@ -1,0 +1,13 @@
+Install order matters, specifically install the nvidia package last
+
+sudo apt-get install linux-headers-generic build-essential
+sudo apt-get install mesa-utils
+sudo apt-get install libxmu-dev libxmu-headers
+sudo apt-get install freeglut3-dev
+sudo apt-get install libglew1.10
+sudo apt-get install libglew-dev
+
+# Bad!
+sudo apt-get install nvidia-current
+# Good :)
+sudo apt-get install nvidia-352-updates

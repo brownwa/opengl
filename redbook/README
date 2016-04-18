@@ -9,6 +9,7 @@ Table of Contents:
 - Environment
 - Required Packages
 - Compile Line
+- Debugging GLSL
 - References
 
 Environment:
@@ -54,6 +55,11 @@ to include the following two lines in your code:
 From the command line:
 
 g++ triangles.cpp LoadShaders.cpp -lGLEW -lGL -lglut -o triangles
+
+Debugging GLSL:
+
+See chapter 2, example 2.4 for a very useful GLSL (OpenGL
+Shader Language) compiler.
 
 References:
 
