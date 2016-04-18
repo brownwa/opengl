@@ -1,1 +1,0 @@
-- Tessellation: tiling a flat surface.- OpenGL Context: object holding an OpenGL instance.- Vertex: bundle of data values that are processed together.- Primitive: a geometric shape.- Fragment: a single pixel of a vertex/primitive.
